@@ -1,4 +1,4 @@
-package com.appspot.smartgames.juststop;
+package com.appspot.lincoln_kids.juststop;
 
 import java.io.IOException;
 
