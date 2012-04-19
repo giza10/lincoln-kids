@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+* { margin: 0; padding: 0;}
+/* ボタンの基本的な大きさを大きくする */
+span,input { height: 42px; font-size: 20px; margin: 2px; }
+
+/* screen1（発進画面） */
+#screen1 { height: 100%; background-image: url('/juststop/img/bgtop.jpg'); }
+#cartop { position: absolute; left: 28px; width: 256px; height: 256px; }
+#go { position: absolute; bottom: 16px; width:98% }
+
+/* screen2（走行画面） */
+#sideview { height: 200px; background-image: url('/juststop/img/bgside.gif');
+            background-repeat: repeat-x; }
+#carside { position: absolute; top: 58px; left: 36px; }
+#object { position: absolute; top: 0px; left: 200px; }
+#road { position: absolute; top: 184px; left: 0px; height: 16px; width: 100%;
+        background-image: url('/juststop/img/road.gif'); background-repeat: repeat-x; }
+#infoview { margin: 4; padding: 4; }
+#register, #ranking, #retry { width: 48%; }
+/* 記録登録時のアニメーション */
+#updating {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  background-image: url('/juststop/img/ajax-loader.gif');
+  background-color: #FFFFFF;
+  background-position: center;
+  background-repeat: no-repeat;
+}
