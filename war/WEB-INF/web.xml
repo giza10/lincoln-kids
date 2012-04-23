@@ -6,27 +6,27 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
   version="2.5">
   <servlet>
     <servlet-name>Index</servlet-name>
-    <servlet-class>com.appspot.smartgames.IndexServlet</servlet-class>
+    <servlet-class>com.appspot.lincoln_kids.IndexServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>Login</servlet-name>
-    <servlet-class>com.appspot.smartgames.LoginServlet</servlet-class>
+    <servlet-class>com.appspot.lincoln_kids.LoginServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>LoginHandler</servlet-name>
-    <servlet-class>com.appspot.smartgames.LoginHandlerServlet</servlet-class>
+    <servlet-class>com.appspot.lincoln_kids.LoginHandlerServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>juststop/Main</servlet-name>
-    <servlet-class>com.appspot.smartgames.juststop.MainServlet</servlet-class>
+    <servlet-class>com.appspot.lincoln_kids.juststop.MainServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>juststop/Register</servlet-name>
-    <servlet-class>com.appspot.smartgames.juststop.RegisterServlet</servlet-class>
+    <servlet-class>com.appspot.lincoln_kids.juststop.RegisterServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>juststop/Ranking</servlet-name>
-    <servlet-class>com.appspot.smartgames.juststop.RankingServlet</servlet-class>
+    <servlet-class>com.appspot.lincoln_kids.juststop.RankingServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Index</servlet-name>
@@ -54,7 +54,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
   </servlet-mapping>
   <filter>
     <filter-name>User</filter-name>
-    <filter-class>com.appspot.smartgames.UserFilter</filter-class>
+    <filter-class>com.appspot.lincoln_kids.UserFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>User</filter-name>
