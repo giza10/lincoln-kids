@@ -25,6 +25,7 @@
 </div>
 <ul>
 <li><a href="/juststop/main" target=”_blank”>Just Stop</a></li>
+<li><a href="/calcgame/main" target=”_blank”>けいさんゲーム</a></li>
 </ul>
 </body>
 </html>

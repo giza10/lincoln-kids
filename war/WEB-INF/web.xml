@@ -28,6 +28,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     <servlet-name>juststop/Ranking</servlet-name>
     <servlet-class>com.appspot.lincoln_kids.juststop.RankingServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>calcgame/Main</servlet-name>
+    <servlet-class>com.appspot.lincoln_kids.calcgame.MainServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Index</servlet-name>
     <url-pattern>/index</url-pattern>
@@ -51,6 +55,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
   <servlet-mapping>
     <servlet-name>juststop/Ranking</servlet-name>
     <url-pattern>/juststop/ranking</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>calcgame/Main</servlet-name>
+    <url-pattern>/calcgame/main</url-pattern>
   </servlet-mapping>
   <filter>
     <filter-name>User</filter-name>
