@@ -33,10 +33,10 @@
 </div>
 <h1><% out.println(question); %></h1>
 <ul>
-<li><a href="/calcgame/answer"><% out.println(ans1); %></a></li>
-<li><a href="/calcgame/answer"><% out.println(ans2); %></a></li>
-<li><a href="/calcgame/answer"><% out.println(ans3); %></a></li>
-<li><a href="/calcgame/answer"><% out.println(ans4); %></a></li>
+<li><a href="/calcgame/judge"><% out.println(ans1); %></a></li>
+<li><a href="/calcgame/judge"><% out.println(ans2); %></a></li>
+<li><a href="/calcgame/judge"><% out.println(ans3); %></a></li>
+<li><a href="/calcgame/judge"><% out.println(ans4); %></a></li>
 </ul>
 </body>
 </html>
