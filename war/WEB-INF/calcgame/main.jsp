@@ -1,13 +1,6 @@
+
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<%
-    String question = (String) request.getAttribute( "Question" );
-    Integer ans1 = (Integer) request.getAttribute( "ans1" );
-    Integer ans2 = (Integer) request.getAttribute( "ans2" );
-    Integer ans3 = (Integer) request.getAttribute( "ans3" );
-    Integer ans4 = (Integer) request.getAttribute( "ans4" );
-%>
 
 <html>
 <head>
@@ -19,24 +12,20 @@
 </head>
 <body>
 <div id="header" class="pre">
-<!-- 
-<p>
-<c:if test="${not empty user}">
-<c:out value="${nickname}" />
-</c:if>
-<c:if test="${empty user}">
-ログインしていません
-</c:if>
-</p>
- -->
 <h1>第１問</h1>
 </div>
-<h1><% out.println(question); %></h1>
+
+<c:forEach var="question" varStatus="status" items="${questionSet}">
+<div id="question-<c:out value='${status.index + 1}'/>">
+<h1><c:out value="${question.question}"/></h1>
 <ul>
-<li><a href="/calcgame/judge"><% out.println(ans1); %></a></li>
-<li><a href="/calcgame/judge"><% out.println(ans2); %></a></li>
-<li><a href="/calcgame/judge"><% out.println(ans3); %></a></li>
-<li><a href="/calcgame/judge"><% out.println(ans4); %></a></li>
+  <li><a href="/calcgame/judge"><c:out value="${question.ans1}"/></a></li>
+  <li><a href="/calcgame/judge"><c:out value="${question.ans2}"/></a></li>
+  <li><a href="/calcgame/judge"><c:out value="${question.ans3}"/></a></li>
+  <li><a href="/calcgame/judge"><c:out value="${question.ans4}"/></a></li>
 </ul>
+</div>
+</c:forEach>
 </body>
+
 </html>
