@@ -29,16 +29,25 @@ public class MainServlet extends HttpServlet {
 
     QuestionSet generateQuestion() {
         Random rnd = new Random();
-        int arg1 = rnd.nextInt(10);
-        int arg2 = rnd.nextInt(10);
+        int arg1 = rnd.nextInt(9) + 1;
+        int arg2 = rnd.nextInt(9) + 1;
+        int correctAnsIdx = rnd.nextInt(4);
+        int answers[] = new int[4];
+        int correctAns = arg1 + arg2;
+
+        // Temporary
+        answers[correctAnsIdx] = correctAns;
+        answers[(correctAnsIdx+1)%4] = correctAns - 1;
+        answers[(correctAnsIdx+2)%4] = correctAns + 1;
+        answers[(correctAnsIdx+3)%4] = correctAns + arg1;
 
         QuestionSet set = new QuestionSet();
         set.setQuestion(new String(arg1 + " + " + arg2 + " = ?"));
-//        set.ans1 = 1;
-//        set.ans2 = 2;
-//        set.ans3 = 3;
-//        set.ans4 = 4;
-//        set.correctAnsIdx = 2;
+        set.setAns1(answers[0]);
+        set.setAns2(answers[1]);
+        set.setAns3(answers[2]);
+        set.setAns4(answers[3]);
+        set.setCorrectAnsIdx(correctAnsIdx);
 
         return set;
     }
