@@ -7,8 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport"
   content="width=320px, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no" />
-<link rel="stylesheet" href="/stylesheets/iphone.css" />
 <title>けいさんゲーム</title>
+<link rel="stylesheet" href="/stylesheets/iphone.css" />
+<script type="text/javascript"
+  src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="/calcgame/js/main.js"></script>
 </head>
 <body>
 <div id="header" class="pre">
