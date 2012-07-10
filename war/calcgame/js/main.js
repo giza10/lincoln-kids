@@ -1,4 +1,5 @@
-var mode, roadLength, pullLength, runLength, x0, y0, x1, y1, runtimer;
+//var mode, roadLength, pullLength, runLength, x0, y0, x1, y1, runtimer;
+var questionIndex;
 
 /* 画面読み込み完了時の処理 */
 $(function() {
@@ -13,24 +14,35 @@ $(function() {
     //$("#register:enabled").bind("touchend", register);
     //$("#ranking").bind("touchend", ranking);
     init();
+    questionIndex = 1;
 });
 
 /* 初期化 */
 function init() {
-    $("#question-1").toggle(true);
-    $("#question-2").toggle(false);
-    $("#question-3").toggle(false);
-    $("#question-4").toggle(false);
-    $("#question-5").toggle(false);
-    $("#question-6").toggle(false);
-    $("#question-7").toggle(false);
-    $("#question-8").toggle(false);
-    $("#question-9").toggle(false);
-    $("#question-10").toggle(false);
+	showQuestion(1);
     //mode = 0;
     //pullLength = 0;
     //roadLength = 6000;
     //$("#cartop").css("top", 0);
+}
+
+function showQuestion(questionIndex) {
+	for (i = 1; i <= 10; i++) {
+		if (i == questionIndex) {
+		    $("#question-" + i).toggle(true);
+		} else {
+		    $("#question-" + i).toggle(false);
+		}
+	}
+}
+
+/* */
+function judge(index, correctAnsIdx) {
+	if (index == correctAnsIdx) {
+		
+	}
+	questionIndex ++;
+	showQuestion(questionIndex);
 }
 
 ///* ミニカーをブルバック中（タッチされた） */
