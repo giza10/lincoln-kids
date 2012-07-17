@@ -1,7 +1,6 @@
 package com.appspot.lincoln_kids.calcgame;
 
 import java.io.IOException;
-import java.util.Random;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,13 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
 public class MainServlet extends HttpServlet {
+
+	private final int NUM_OF_QUESTION = 10;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
-		QuestionSet[] questionSets = new QuestionSet[10];
-		for (int i = 0; i < 10; i++) {
-			questionSets[i] = generateQuestion();
+		QuestionGenerator generator = new QuestionGenerator();
+		QuestionSet[] questionSets = new QuestionSet[NUM_OF_QUESTION];
+		for (int i = 0; i < NUM_OF_QUESTION; i++) {
+			questionSets[i] = generator.generateQuestion();
 		}
 
 		req.setAttribute("questionSet", questionSets);
@@ -25,27 +28,5 @@ public class MainServlet extends HttpServlet {
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(
 				"/WEB-INF/calcgame/main.jsp");
 		rd.forward(req, resp);
-	}
-
-	QuestionSet generateQuestion() {
-		Random rnd = new Random();
-		int arg1 = rnd.nextInt(9) + 1;
-		int arg2 = rnd.nextInt(9) + 1;
-		int correctAnsIdx = rnd.nextInt(4);
-		int answers[] = new int[4];
-		int correctAns = arg1 + arg2;
-
-		// Temporary
-		answers[correctAnsIdx] = correctAns;
-		answers[(correctAnsIdx + 1) % 4] = correctAns - 1;
-		answers[(correctAnsIdx + 2) % 4] = correctAns + 1;
-		answers[(correctAnsIdx + 3) % 4] = correctAns + arg1;
-
-		QuestionSet set = new QuestionSet();
-		set.setQuestion(new String(arg1 + " + " + arg2 + " = ?"));
-		set.setAnswerList(answers);
-		set.setCorrectAnsIdx(correctAnsIdx);
-
-		return set;
 	}
 }
