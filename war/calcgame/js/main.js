@@ -1,34 +1,23 @@
-//var mode, roadLength, pullLength, runLength, x0, y0, x1, y1, runtimer;
 var questionIndex;
 
 /* 画面読み込み完了時の処理 */
 $(function() {
-    /* 画面のスクロールを禁止する */
-    //$("body").bind("touchstart", function(e) { e.preventDefault(); });
-    /* イベントを登録する */
-    //$("#cartop").bind("touchstart", touchstartHandler);
-    //$("#cartop").bind("touchmove", touchmoveHandler);
-    //$("#cartop").bind("touchend", touchendHandler);
-    //$("#go").bind("touchend", go);
-    //$("#retry").bind("touchend", init);
-    //$("#register:enabled").bind("touchend", register);
-    //$("#ranking").bind("touchend", ranking);
     init();
     questionIndex = 1;
 });
 
 /* 初期化 */
 function init() {
+	$("#judge").toggle(false);
+	$("#correctImage").hide();
+	$("#incorrectImage").hide();
 	showQuestion(1);
-    //mode = 0;
-    //pullLength = 0;
-    //roadLength = 6000;
-    //$("#cartop").css("top", 0);
 }
 
-function showQuestion(questionIndex) {
+function showQuestion(index) {
+	$("#question-title").text("第" + index + "問");
 	for (i = 1; i <= 10; i++) {
-		if (i == questionIndex) {
+		if (i == index) {
 		    $("#question-" + i).toggle(true);
 		} else {
 		    $("#question-" + i).toggle(false);
@@ -36,12 +25,29 @@ function showQuestion(questionIndex) {
 	}
 }
 
+function hideQuestions() {
+	for (i = 1; i <= 10; i++) {
+		$("#question-" + i).toggle(false);
+	}
+}
+
 /* */
 function judge(index, correctAnsIdx) {
+	hideQuestions();
+	$("#judge").toggle(true);
 	if (index == correctAnsIdx) {
-		
+		$("#correctImage").show();
+		$("#incorrectImage").hide();
+	} else {
+		$("#correctImage").hide();
+		$("#incorrectImage").show();
 	}
+}
+
+/* */
+function goNext() {
 	questionIndex ++;
+	$("#judge").toggle(false);
 	showQuestion(questionIndex);
 }
 

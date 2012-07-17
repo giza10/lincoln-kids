@@ -15,8 +15,9 @@
 </head>
 <body>
 <div id="header" class="pre">
-<h1>第１問</h1>
+<h1 id="question-title">第ｎ問</h1>
 </div>
+
 
 <c:forEach var="question" varStatus="status" items="${questionSet}">
 <div id="question-<c:out value='${status.index + 1}'/>">
@@ -29,6 +30,17 @@
 </ul>
 </div>
 </c:forEach>
+
+<div id="judge">
+<ul>
+<li><a href="#" onclick="goNext()">つぎ　の　もんだい　へ</a></li>
+</ul>
+<p align="center">
+<img id="correctImage" alt="せいかい！" src="/calcgame/images/correct.jpg">
+<img id="incorrectImage" alt="ざんねん！" src="/calcgame/images/incorrect.gif">
+</p>
+</div>
+
 </body>
 
 </html>
