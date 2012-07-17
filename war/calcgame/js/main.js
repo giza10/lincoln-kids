@@ -1,21 +1,24 @@
 var questionIndex;
+var result;
 
 /* 画面読み込み完了時の処理 */
 $(function() {
     init();
     questionIndex = 1;
+    result = new Array(10);
 });
 
 /* 初期化 */
 function init() {
 	$("#judge").toggle(false);
+	$("#result").toggle(false);
 	$("#correctImage").hide();
 	$("#incorrectImage").hide();
 	showQuestion(1);
 }
 
 function showQuestion(index) {
-	$("#question-title").text("第" + index + "問");
+	$("#question-title").text("だい " + index + " もん");
 	for (i = 1; i <= 10; i++) {
 		if (i == index) {
 		    $("#question-" + i).toggle(true);
@@ -38,17 +41,37 @@ function judge(index, correctAnsIdx) {
 	if (index == correctAnsIdx) {
 		$("#correctImage").show();
 		$("#incorrectImage").hide();
+		result[questionIndex - 1] = true;
 	} else {
 		$("#correctImage").hide();
 		$("#incorrectImage").show();
+		result[questionIndex - 1] = false;
+	}
+	if (quetionIndex == 10) {
+		$("#gonext").text("けっか は ・・・")	// TODO: 要修正 (これでは上手く書き換わらない)
 	}
 }
 
 /* */
 function goNext() {
 	questionIndex ++;
+	if (questionIndex > 10) {
+		showResult();
+	} else {
+		$("#judge").toggle(false);
+		showQuestion(questionIndex);
+	}
+}
+
+function showResult() {
+	$("#result").toggle(true);
 	$("#judge").toggle(false);
-	showQuestion(questionIndex);
+	$("#question-title").text("けっか！");
+	score = 0;
+	for (i = 1; i <= 10; i++) {
+		if (result[i] == true) score += 10;
+	}
+	$("#score").text(score + " てん")
 }
 
 ///* ミニカーをブルバック中（タッチされた） */

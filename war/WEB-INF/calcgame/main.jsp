@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="header" class="pre">
-<h1 id="question-title">第ｎ問</h1>
+<h1 id="question-title">だい １ もん</h1>
 </div>
 
 
@@ -33,11 +33,17 @@
 
 <div id="judge">
 <ul>
-<li><a href="#" onclick="goNext()">つぎ　の　もんだい　へ</a></li>
+<li><a href="#" onclick="goNext()" id="gonext">つぎ　の　もんだい　へ</a></li>
 </ul>
 <p align="center">
 <img id="correctImage" alt="せいかい！" src="/calcgame/images/correct.jpg">
 <img id="incorrectImage" alt="ざんねん！" src="/calcgame/images/incorrect.gif">
+</p>
+</div>
+
+<div id="result">
+<p align="center">
+<span id="score" style="font-size:40pt">>100 てん</span>
 </p>
 </div>
 
