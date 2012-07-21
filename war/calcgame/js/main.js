@@ -47,6 +47,10 @@ function judge(index, correctAnsIdx) {
 		$("#incorrectImage").show();
 		result[questionIndex - 1] = false;
 	}
+	
+	// 1秒後に自動的に次の問題に行くタイマセット
+	setTimeout("goNext()", 1000);
+
 	if (quetionIndex == 10) {
 		$("#gonext").text("けっか は ・・・")	// TODO: 要修正 (これでは上手く書き換わらない)
 	}
