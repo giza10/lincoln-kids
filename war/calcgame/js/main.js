@@ -36,26 +36,26 @@ function hideQuestions() {
 
 /* */
 function judge(index, correctAnsIdx) {
-	hideQuestions();
-	$("#judge").toggle(true);
 	if (index == correctAnsIdx) {
-		$("#correctImage").show();
-		$("#incorrectImage").hide();
+		$("#question-expression-" + questionIndex).append(" <span style=' color:blue'>O</span>");
 		result[questionIndex - 1] = true;
 	} else {
-		$("#correctImage").hide();
-		$("#incorrectImage").show();
+		$("#question-expression-" + questionIndex).append(" <span style=' color:red'>X</span>");
 		result[questionIndex - 1] = false;
 	}
-	if (quetionIndex == 10) {
-		$("#gonext").text("けっか は ・・・")	// TODO: 要修正 (これでは上手く書き換わらない)
-	}
+
+	// wait & go next
+	$(this).delay(600).queue(function() {
+		goNext();
+	    $(this).dequeue();
+	});
 }
 
 /* */
 function goNext() {
 	questionIndex ++;
 	if (questionIndex > 10) {
+		hideQuestions();
 		showResult();
 	} else {
 		$("#judge").toggle(false);
