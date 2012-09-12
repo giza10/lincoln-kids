@@ -38,10 +38,10 @@ function hideQuestions() {
 function judge(index, correctAnsIdx) {
 	if (index == correctAnsIdx) {
 		$("#question-expression-" + questionIndex).append(" <span style=' color:blue'>O</span>");
-		result[questionIndex - 1] = true;
+		result[questionIndex] = true;
 	} else {
 		$("#question-expression-" + questionIndex).append(" <span style=' color:red'>X</span>");
-		result[questionIndex - 1] = false;
+		result[questionIndex] = false;
 	}
 
 	// wait & go next
