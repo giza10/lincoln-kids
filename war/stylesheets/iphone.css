@@ -200,7 +200,16 @@
 				list-style-type: none;	
 				padding: 10px 10px 10px 10px;
 				}
-				
+
+			ul li a {
+				padding: 10px 40px 10px 40px;
+			}
+
+			ul li a:active {
+				background: #ffffbb;
+				-webkit-border-radius: 8px;
+			}
+
 
 				
 				/* when you have a first LI item on any list */
