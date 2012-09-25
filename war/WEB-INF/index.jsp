@@ -7,12 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta id="viewport" name="viewport"
   content="width=320; initial-scale=1.0;maximum-scale=1.0; user-scalable=0;" />
-<title>けいさん　ゲーム</title>
+<title>スマートゲーム集 - トップ画面</title>
 <link rel="stylesheet" href="/stylesheets/iphone.css" />
 </head>
 <body>
 <div id="header" class="pre">
-<!-- 
 <p>
 <c:if test="${not empty user}">
 <c:out value="${nickname}" />
@@ -20,13 +19,13 @@
 <c:if test="${empty user}">
 ログインしていません
 </c:if>
-</p> 
--->
-<h1>けいさん　ゲーム</h1>
-<!-- <a href="/login">ログイン</a> -->
+</p>
+<h1>トップ画面</h1>
+<a href="/login">ログイン</a>
 </div>
 <ul>
-<li><a href="/calcgame/main">スタート！</a></li>
+<li><a href="/juststop/main" target=”_blank”>Just Stop</a></li>
+<li><a href="/calcgame/main" target=”_blank”>けいさんゲーム</a></li>
 </ul>
 </body>
 </html>

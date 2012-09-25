@@ -45,10 +45,6 @@
 <p align="center">
 <span id="score" style="font-size:40pt">>100 てん</span>
 </p>
-<ul>
-<li><a href="/calcgame/main">もう　１かい</a></li>
-<li><a href="/index">スタートがめん　へ</a></li>
-</ul>
 </div>
 
 </body>
