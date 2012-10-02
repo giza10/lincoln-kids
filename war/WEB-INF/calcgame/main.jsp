@@ -23,10 +23,10 @@
 <div id="question-<c:out value='${status.index + 1}'/>">
 <h1 id="question-expression-<c:out value='${status.index + 1}'/>" style='padding-left: 20px'><c:out value="${question.question}"/></h1>
 <ul>
-  <li><a href="#" onclick="judge(0, <c:out value="${question.correctAnsIdx}"/>)" style='font-size: 24px'><c:out value="${question.answerList[0]}"/></a></li>
-  <li><a href="#" onclick="judge(1, <c:out value="${question.correctAnsIdx}"/>)" style='font-size: 24px'><c:out value="${question.answerList[1]}"/></a></li>
-  <li><a href="#" onclick="judge(2, <c:out value="${question.correctAnsIdx}"/>)" style='font-size: 24px'><c:out value="${question.answerList[2]}"/></a></li>
-  <li><a href="#" onclick="judge(3, <c:out value="${question.correctAnsIdx}"/>)" style='font-size: 24px'><c:out value="${question.answerList[3]}"/></a></li>
+  <li><a href="#" onclick="judge(0, <c:out value="${question.correctAnsIdx}"/>, <c:out value="${question.answerList[0]}"/>)" style='font-size: 24px'><c:out value="${question.answerList[0]}"/></a></li>
+  <li><a href="#" onclick="judge(1, <c:out value="${question.correctAnsIdx}"/>, <c:out value="${question.answerList[1]}"/>)" style='font-size: 24px'><c:out value="${question.answerList[1]}"/></a></li>
+  <li><a href="#" onclick="judge(2, <c:out value="${question.correctAnsIdx}"/>, <c:out value="${question.answerList[2]}"/>)" style='font-size: 24px'><c:out value="${question.answerList[2]}"/></a></li>
+  <li><a href="#" onclick="judge(3, <c:out value="${question.correctAnsIdx}"/>, <c:out value="${question.answerList[3]}"/>)" style='font-size: 24px'><c:out value="${question.answerList[3]}"/></a></li>
 </ul>
 </div>
 </c:forEach>
